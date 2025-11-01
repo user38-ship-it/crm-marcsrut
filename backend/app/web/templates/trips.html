@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="mb-4">Рейси</h1>
+<div class="card shadow-sm">
+  <div class="card-body">
+    <p class="text-muted mb-3">Тут буде список рейсів із бази даних.</p>
+    <div class="table-responsive">
+      <table class="table table-striped align-middle mb-0">
+        <thead>
+          <tr>
+            <th scope="col">Маршрут</th>
+            <th scope="col">Час відправлення</th>
+            <th scope="col">Вільні місця</th>
+            <th scope="col">Статус</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Київ → Львів</td>
+            <td>08:00</td>
+            <td>5</td>
+            <td><span class="badge bg-success">Активний</span></td>
+          </tr>
+          <tr>
+            <td>Львів → Київ</td>
+            <td>18:00</td>
+            <td>2</td>
+            <td><span class="badge bg-warning text-dark">Майже заповнений</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}

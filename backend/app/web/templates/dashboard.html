@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="mb-4">Головна</h1>
+<div class="row g-3">
+  <div class="col-md-4">
+    <div class="card shadow-sm h-100">
+      <div class="card-body">
+        <h5 class="card-title">Кількість рейсів</h5>
+        <p class="display-6 fw-bold text-primary">{{ stats.trips }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card shadow-sm h-100">
+      <div class="card-body">
+        <h5 class="card-title">Заповненість</h5>
+        <p class="display-6 fw-bold text-success">{{ stats.occupancy }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card shadow-sm h-100">
+      <div class="card-body">
+        <h5 class="card-title">Активних водіїв</h5>
+        <p class="display-6 fw-bold text-warning">{{ stats.drivers }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

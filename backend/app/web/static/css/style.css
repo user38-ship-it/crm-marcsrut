@@ -1,0 +1,28 @@
+body {
+  background-color: #f8f9fc;
+  color: #1a2a4a;
+}
+
+.navbar {
+  background: linear-gradient(90deg, #0d47a1, #1976d2);
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.nav-link.active,
+.nav-link:hover {
+  color: #fff;
+}
+
+.card {
+  border: none;
+  border-radius: 0.75rem;
+}
+
+@media (max-width: 576px) {
+  h1 {
+    font-size: 1.75rem;
+  }
+}

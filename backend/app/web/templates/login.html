@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-6 col-lg-4">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h1 class="h3 mb-3 fw-semibold text-center">Вхід до CRM</h1>
+        <p class="text-muted text-center mb-4">Уведіть свій номер телефону, щоб продовжити.</p>
+        <form>
+          <div class="mb-3">
+            <label for="phone" class="form-label">Номер телефону</label>
+            <input type="tel" class="form-control" id="phone" placeholder="+380 XX XXX XX XX" />
+          </div>
+          <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-primary">Надіслати OTP</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
