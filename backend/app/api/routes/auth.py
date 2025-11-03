@@ -21,7 +21,11 @@ def register_user(
     otp = auth_service.create_otp(session, payload.phone)
     session.commit()
 
-    return RegisterResponse(phone=user.phone, otp_code=otp.code)
+    return RegisterResponse(
+        phone=user.phone,
+        otp_code=otp.code,
+        expires_at=otp.expires_at,
+    )
 
 
 @router.post("/verify", response_model=UserProfile)

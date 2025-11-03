@@ -11,6 +11,7 @@ class RegisterRequest(BaseModel):
 class RegisterResponse(BaseModel):
     phone: str
     otp_code: str
+    expires_at: datetime
     message: str = "OTP sent"
 
 
