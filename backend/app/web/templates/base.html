@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ page_title }} · Booking CRM</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/static/css/style.css" />
+  </head>
+  <body class="crm-body">
+    <div class="layout">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar__brand">
+          <span class="sidebar__logo">🚍</span>
+          <div>
+            <span class="sidebar__title">Booking CRM</span>
+            <span class="sidebar__subtitle">Маршрути & Бронювання</span>
+          </div>
+        </div>
+        <nav class="sidebar__nav">
+          <a class="sidebar__link {{ 'active' if active_page == 'dashboard' else '' }}" href="/">
+            <span class="sidebar__icon">📊</span>
+            <span>Панель</span>
+          </a>
+          <a class="sidebar__link {{ 'active' if active_page == 'trips' else '' }}" href="/trips">
+            <span class="sidebar__icon">🚐</span>
+            <span>Рейси</span>
+          </a>
+          <a class="sidebar__link {{ 'active' if active_page == 'drivers' else '' }}" href="/drivers">
+            <span class="sidebar__icon">👨‍✈️</span>
+            <span>Водії</span>
+          </a>
+          <a class="sidebar__link {{ 'active' if active_page == 'bookings' else '' }}" href="/bookings">
+            <span class="sidebar__icon">💺</span>
+            <span>Бронювання</span>
+          </a>
+          <a class="sidebar__link {{ 'active' if active_page == 'analytics' else '' }}" href="/analytics">
+            <span class="sidebar__icon">📈</span>
+            <span>Аналітика</span>
+          </a>
+          <a class="sidebar__link {{ 'active' if active_page == 'settings' else '' }}" href="/settings">
+            <span class="sidebar__icon">⚙️</span>
+            <span>Налаштування</span>
+          </a>
+        </nav>
+        <div class="sidebar__footer">
+          <a class="sidebar__link sidebar__link--secondary {{ 'active' if active_page == 'login' else '' }}" href="/login">
+            <span class="sidebar__icon">🔒</span>
+            <span>Вийти</span>
+          </a>
+        </div>
+      </aside>
+
+      <div class="main">
+        <header class="topbar">
+          <button class="btn btn-icon d-lg-none" id="menu-toggle" aria-label="Перемкнути меню">
+            <span aria-hidden="true">☰</span>
+          </button>
+          <div>
+            <h1 class="topbar__title">{{ page_title }}</h1>
+            <p class="topbar__subtitle">Контроль перевезень у реальному часі</p>
+          </div>
+          <div class="topbar__profile">
+            <div class="topbar__status">
+              <span class="status-dot"></span>
+              Онлайн
+            </div>
+            <div class="topbar__user">
+              <div class="topbar__avatar">AD</div>
+              <div>
+                <span class="topbar__name">Anna D.</span>
+                <span class="topbar__role">Оператор</span>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <main class="content">
+          {% block content %}{% endblock %}
+        </main>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/static/js/scripts.js"></script>
+  </body>
+</html>

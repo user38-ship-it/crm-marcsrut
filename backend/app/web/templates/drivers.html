@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="page-header">
+  <div>
+    <h2 class="page-title">Водії</h2>
+    <p class="text-muted mb-0">Актуальний склад водіїв та їх статус.</p>
+  </div>
+  <a href="#" class="btn btn-outline-primary">Запросити водія</a>
+</div>
+<div class="row g-4">
+  {% set drivers = [
+    {"name": "Олександр П.", "route": "Київ → Львів", "status": "На маршруті", "status_class": "success"},
+    {"name": "Марія Л.", "route": "Київ → Одеса", "status": "Посадка", "status_class": "warning"},
+    {"name": "Тарас С.", "route": "Львів → Варшава", "status": "Відпочинок", "status_class": "muted"},
+    {"name": "Ірина К.", "route": "Одеса → Київ", "status": "У дорозі", "status_class": "info"}
+  ] %}
+  {% for driver in drivers %}
+  <div class="col-12 col-md-6 col-xl-3">
+    <div class="profile-card">
+      <div class="profile-card__avatar">{{ driver.name[0] }}</div>
+      <div class="profile-card__body">
+        <h3>{{ driver.name }}</h3>
+        <p class="text-muted mb-1">Маршрут: {{ driver.route }}</p>
+        <span class="status-pill status-pill--{{ driver.status_class }}">{{ driver.status }}</span>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

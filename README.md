@@ -28,6 +28,17 @@ infra/             # інфраструктурні скрипти (зарезе
    ```
 3. Бекенд буде доступний на `http://localhost:8000`, Telegram-бот підключиться до вказаного токена.
 
+### Ручний запуск CRM-панелі для розробки
+
+Якщо потрібно швидко переглянути веб-інтерфейс без Docker, активуйте віртуальне середовище та виконайте:
+
+```bash
+pip install -r requirements.txt
+uvicorn backend.app.main:app --reload
+```
+
+Після старту застосунок буде доступний на `http://localhost:8000`. Статичні файли сервісу (CSS/JS) віддаються через `/static`, а сторінки CRM доступні за адресами `/`, `/trips`, `/drivers`, `/bookings`, `/analytics`, `/settings` та `/login`.
+
 ## API
 
 ### `POST /auth/register`

@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="page-header">
+  <div>
+    <h2 class="page-title">Налаштування</h2>
+    <p class="text-muted mb-0">Керуйте інформацією компанії та параметрами сервісу.</p>
+  </div>
+  <button class="btn btn-primary">Зберегти зміни</button>
+</div>
+<div class="row g-4">
+  <div class="col-12 col-lg-6">
+    <div class="panel">
+      <div class="panel__header">
+        <h3>Дані компанії</h3>
+      </div>
+      <form class="vstack gap-3">
+        <div>
+          <label class="form-label">Назва компанії</label>
+          <input type="text" class="form-control" value="Маршрут Сервіс" />
+        </div>
+        <div>
+          <label class="form-label">Телефон підтримки</label>
+          <input type="text" class="form-control" value="+380 44 123 45 67" />
+        </div>
+        <div>
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" value="support@bookingcrm.ua" />
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="col-12 col-lg-6">
+    <div class="panel">
+      <div class="panel__header">
+        <h3>Параметри сповіщень</h3>
+      </div>
+      <form class="vstack gap-3">
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="smsSwitch" checked />
+          <label class="form-check-label" for="smsSwitch">SMS нагадування пасажирам</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="driverSwitch" checked />
+          <label class="form-check-label" for="driverSwitch">Push-сповіщення для водіїв</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="dailySummary" />
+          <label class="form-check-label" for="dailySummary">Щоденний email звіт</label>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
